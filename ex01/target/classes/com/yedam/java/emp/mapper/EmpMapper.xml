@@ -16,6 +16,7 @@
 		</where> 
 		 -->
 	</select>
+	<!-- 
 	<select id="getEmp" parameterType="EmpVO" resultType="EmpVO">
 		SELECT employee_id,
 			   first_name,
@@ -30,7 +31,15 @@
 		WHERE employee_id = #{employeeId}
 	
 	</select>
+	 -->
+	 
+	 <select id="getEmp" parameterType="EmpVO" resultType="EmpVO">
+		SELECT *
+		FROM employees
+		WHERE employee_id = #{employeeId}
 	
+	</select>
+	 
 	<insert id="insertEmp" parameterType="EmpVO">
 	
 		<!-- insert, update 태그에서만 사용할 수 있는 키 : selectKey -->
@@ -70,6 +79,11 @@
 		 
 		WHERE employee_id = #{employeeId}	
 	</update>
+	
+	<delete id="deleteEmpInfo" parameterType="Integer">
+		DELETE FROM employees
+		WHERE employee_id = #{employeeId}
+	</delete>
 	
 </mapper>
 

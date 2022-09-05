@@ -13,4 +13,9 @@ public class EmpVO {
 	String jobId;
 	String salary;
 	
+	//추가
+	String phoneNumber;
+	String commissionPct;
+	String managerId;
+	String departmentId;
 }
