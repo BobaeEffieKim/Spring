@@ -13,6 +13,7 @@
 </style>
 </head>
 <body>
+	<button type="button" onclick="location.href='insertForm'">등록</button>
 	<table>
 		<thead>
 			<tr>
@@ -42,7 +43,7 @@
 		</tbody>
 	</table>
 	<br>
-	<button type="button">등록</button>
+	
 <script>
 	function deleteInfo(id, event){
 		event.stopPropagation();
