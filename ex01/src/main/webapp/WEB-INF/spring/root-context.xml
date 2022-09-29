@@ -1,8 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
+	
+	<bean id="LogAop" class="com.yedam.java.test.service.LogAop"></bean>
+	<aop:config>
+		<aop:aspect id="logger" ref="LogAop">
+			<aop:pointcut expression="within(com.yedam.java.test.service.*)" id="public"/>
+			<aop:around method="loggerAop" pointcut-ref="public"/>
+		</aop:aspect>
+	</aop:config>
+	
+	<bean id="myCat" class="com.yedam.java.test.service.Cats">
+		<property name="name" value="호랑이"></property>
+		<property name="age" value="1"></property>
+		<property name="color" value="yellow"></property>
+	</bean>
 		
 </beans>

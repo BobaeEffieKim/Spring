@@ -21,8 +21,9 @@
 		<beans:property name="suffix" value=".jsp" />
 		<beans:property name="order" value="2" />
 	</beans:bean>
-	
+ 	
 	<!-- 설정파일 -->
+	<!-- 
 	<beans:bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
 		<beans:property name="definitions">
 			<beans:list>
@@ -31,13 +32,12 @@
 		</beans:property>
 	</beans:bean>
 	
-	<!-- 실제 동작파일 -->
+	실제 동작파일
 	<beans:bean id="tilesViewResolver" class="org.springframework.web.servlet.view.tiles3.TilesViewResolver">
 		<beans:property name="order" value="1"></beans:property>
 	</beans:bean>
-	
+	 -->
 	<context:component-scan base-package="com.yedam.java" />
 	
-	
-	
+	 
 </beans:beans>
